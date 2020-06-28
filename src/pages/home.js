@@ -1,5 +1,5 @@
 const home = () => {
-//Template para generar la vista de los personajes en el home
+//Template para generar la vista de los personajes en el home (nuestra single page)
     const view = `
         <div class = "characters">
             <article class = "characters-item">
