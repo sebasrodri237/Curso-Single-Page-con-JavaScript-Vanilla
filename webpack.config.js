@@ -35,15 +35,15 @@ module.exports = {
     //ser compatibles con todos los navegadores
 
     plugins: [//plugins a utilizar para que pueda convertir archivos html
-        new HtmlWebpackPlugin([
+        new HtmlWebpackPlugin(
             {
                 inject: true,
-                template: '.public/index.html',
+                template: './public/index.html',
                 //Codigo origen html, si acepta rutas relativas
                 filename: './index.html',
                 //Nombre codigo salida convertido
             }
-        ])
+        )
     ]
 }
 //Creamos un modulo

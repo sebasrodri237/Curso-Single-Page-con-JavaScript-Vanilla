@@ -1,6 +1,6 @@
 //Creamos esto archivo en templates ya que no es una pagina 
 //sino una parte de ellas
-const header = () => {
+const headerFunc = () => {
 //Template del header que contiene logo y barra de navegacion
     const view = `
 
@@ -23,4 +23,4 @@ const header = () => {
     return view;
 }
 
-export default header;
+export default headerFunc;
