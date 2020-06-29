@@ -24,7 +24,16 @@ const router = async () => {
     //Establecer los templates hacia un elemento del DOM
 
     header.innerHTML = await headerFunc();
-    
+
+    let hash = getHash();
+    //Obtenemos el id o seccion a la que se mueve el usuario
+    let route = await resolveRoutes(hash);
+    //Debo esperar mientras resolve obtener el hash y hacer la validacion
+    let render = routes[route] ? routes[route] : error404;
+    //Utilizamos la notacion [] en la que le pasamos el string que queremos
+    //encontrar al objeto routes, si este se encuentra lo retornamos
+    //sino es el caso nos dirigimos al error404
+    content.innerHTML = await render();
 }
 //Manejador para mostrar los elementos segun la logica establecida
 //obteniedno valores del navegador(un click a un enlace..etc)

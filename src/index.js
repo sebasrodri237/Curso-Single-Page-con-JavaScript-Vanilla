@@ -1,5 +1,9 @@
 import router from './routes';
 
 window.addEventListener('load', router);
-//Para cuando se habra la pagina y todo este cargado para mostrarse 
+//Para cuando se carga por primera vez la pagina
 //hacemos el callback
+
+window.addEventListener('hashchange', router);
+//Para cuando se modifiquen las rutas o mejor dicho el usuario se mueva
+//entre personajes/paginas
