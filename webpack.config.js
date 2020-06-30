@@ -1,6 +1,8 @@
 const path = require('path');//permite acceder hacia donde nos movemos en las carpetas
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //Del paquete de webpack que instalamos el plugin para trabajar con html
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+//Paquete para que se pueda trabajar con estilos en el compilado(al hacer build)
 
 module.exports = {
 
@@ -43,7 +45,12 @@ module.exports = {
                 filename: './index.html',
                 //Nombre codigo salida convertido
             }
-        )
+        ),
+        new CopyWebpackPlugin({
+            
+            patterns: [{ from: './src/css/styles.css',
+            to: '' }],
+        })
     ]
 }
 //Creamos un modulo
